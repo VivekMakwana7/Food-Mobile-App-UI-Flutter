@@ -34,7 +34,7 @@ Drawer mainDrawer(int index) {
               children: [
                 const CircleAvatar(
                   radius: 40,
-                  backgroundImage: AssetImage("assets/images/me.jpg"),
+                  backgroundImage: AssetImage("assets/images/main.png"),
                 ),
                 const SizedBox(
                   height: 10,
@@ -159,12 +159,12 @@ Drawer mainDrawer(int index) {
                               borderRadius: BorderRadius.circular(15),
                             ),
                             tileColor:
-                                controller.currentDrawerItmeIndex == index
+                                controller.currentDrawerItemIndex == index
                                     ? const Color.fromARGB(255, 219, 205, 255)
                                     : Colors.transparent,
                             leading: Icon(
                               drawerItem[index].icon,
-                              color: controller.currentDrawerItmeIndex == index
+                              color: controller.currentDrawerItemIndex == index
                                   ? Colors.purple
                                   : Colors.grey,
                             ),
@@ -172,7 +172,7 @@ Drawer mainDrawer(int index) {
                               drawerItem[index].title,
                               style: TextStyle(
                                 color:
-                                    controller.currentDrawerItmeIndex == index
+                                    controller.currentDrawerItemIndex == index
                                         ? Colors.purple
                                         : Colors.black,
                                 fontSize: 17,

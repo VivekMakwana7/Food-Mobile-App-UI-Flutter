@@ -1,10 +1,10 @@
 import 'package:get/state_manager.dart';
 
 class MainDrawerController extends GetxController {
-  int currentDrawerItmeIndex = 0;
+  int currentDrawerItemIndex = 0;
 
   void changeIndex(int index){
-    currentDrawerItmeIndex = index;
+    currentDrawerItemIndex = index;
     update(["current Drawer Itme Index"]);
   }
 }

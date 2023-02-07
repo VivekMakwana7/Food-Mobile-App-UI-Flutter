@@ -10,7 +10,7 @@ import '../controllers/wallet_controller.dart';
 import '../controllers/switch_controller.dart';
 import '../pages/details.dart';
 import '../controllers/tabBar_controller.dart';
-import '../utils/constanst.dart';
+import '../utils/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,13 +24,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return SafeArea(
       child: Scaffold(
         drawer: mainDrawer(3),
         appBar: const MyAppBar(),
         body: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(7.0),
           child: Column(
             children: [
               const TopTextWidget(),
@@ -57,7 +56,7 @@ class BottomSaladGridView extends StatelessWidget {
     var _foodController = Get.find<FoodController>();
     return SizedBox(
       width: w,
-      height: h / 2.9,
+      height: h / 2.598,
       child: GridView.builder(
           physics: const BouncingScrollPhysics(),
           itemCount: _foodController.salads.length,
@@ -76,29 +75,30 @@ class BottomSaladGridView extends StatelessWidget {
                 height: double.infinity,
                 margin: const EdgeInsets.all(10),
                 child: Stack(
+                  alignment: Alignment.center,
                   children: [
                     Positioned(
                       bottom: 10,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1500),
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 700),
                         child: Container(
                           width: w / 2.4,
                           height: h / 4,
                           decoration: BoxDecoration(
                               color: unSelectedColor,
-                              borderRadius: BorderRadius.circular(60)),
+                              borderRadius: BorderRadius.circular(30)),
                         ),
                       ),
                     ),
                     Positioned(
-                      left: 15,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1600),
+                      top: 10,
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 800),
                         child: Spin(
-                          delay: const Duration(milliseconds: 1650),
+                          delay: const Duration(milliseconds: 800),
                           child: SizedBox(
-                            width: w / 2.8,
-                            height: h / 5.5,
+                            width: w / 3,
+                            height: h / 7,
                             child: Center(
                               child: Image.asset(
                                 _foodController.salads[index].img,
@@ -110,16 +110,17 @@ class BottomSaladGridView extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      left: 10,
+                      
                       top: 130,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1700),
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 900),
                         child: SizedBox(
                           width: w / 2.7,
                           height: h / 30,
                           child: Center(
                             child: Text(
                               _foodController.salads[index].title,
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.oxygen(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
@@ -130,24 +131,25 @@ class BottomSaladGridView extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      left: 25,
+                    
                       top: 155,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1800),
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 1000),
                         child: Text(
                           _foodController.salads[index].subtitle,
+                            textAlign: TextAlign.center,
                           style: GoogleFonts.oxygen(
                               color: const Color.fromARGB(255, 135, 134, 134),
                               fontWeight: FontWeight.w300,
-                              fontSize: 16),
+                              fontSize: 14),
                         ),
                       ),
                     ),
                     Positioned(
                       left: 55,
                       top: 185,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1900),
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 1100),
                         child: Text(
                           "\$${_foodController.salads[index].price.toStringAsFixed(2)}",
                           style: GoogleFonts.oxygen(
@@ -161,7 +163,7 @@ class BottomSaladGridView extends StatelessWidget {
                       right: 5,
                       bottom: 7,
                       child: FadeInUp(
-                        delay: const Duration(milliseconds: 1950),
+                        delay: const Duration(milliseconds: 1150),
                         child: CircleAvatar(
                           backgroundColor: Colors.black,
                           child: IconButton(
@@ -221,7 +223,7 @@ class MiddleSaladsPageView extends StatelessWidget {
                       bottom: 10,
                       right: 0,
                       child: FadeInLeft(
-                        delay: const Duration(milliseconds: 900),
+                        delay: const Duration(milliseconds: 350),
                         child: Container(
                           width: w / 1.3,
                           height: h / 5.5,
@@ -233,10 +235,11 @@ class MiddleSaladsPageView extends StatelessWidget {
                     ),
                     Positioned(
                       bottom: 3,
+                      left: 5,
                       child: FadeInLeft(
-                        delay: const Duration(milliseconds: 1000),
+                        delay: const Duration(milliseconds: 400),
                         child: Spin(
-                          delay: const Duration(milliseconds: 1100),
+                          delay: const Duration(milliseconds: 400),
                           child: SizedBox(
                             width: w / 2.5,
                             height: h / 5,
@@ -252,24 +255,24 @@ class MiddleSaladsPageView extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      left: 170,
+                      left: 175,
                       top: 40,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1200),
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 450),
                         child: Text(
                           _foodController.salads[index].title,
                           style: GoogleFonts.oxygen(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 22),
+                              fontSize: 21),
                         ),
                       ),
                     ),
                     Positioned(
-                      left: 171,
+                      left: 175,
                       top: 68,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1300),
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 500),
                         child: Text(
                           _foodController.salads[index].subtitle,
                           style: GoogleFonts.oxygen(
@@ -280,10 +283,10 @@ class MiddleSaladsPageView extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      left: 171,
+                      left: 175,
                       top: 95,
-                      child: FadeInDown(
-                        delay: const Duration(milliseconds: 1400),
+                      child: FadeInUp(
+                        delay: const Duration(milliseconds: 600),
                         child: Text(
                           "\$${_foodController.salads[index].price.toStringAsFixed(2)}",
                           style: GoogleFonts.oxygen(
@@ -296,8 +299,8 @@ class MiddleSaladsPageView extends StatelessWidget {
                     Positioned(
                       right: 5,
                       bottom: 10,
-                      child: FadeInUp(
-                        delay: const Duration(milliseconds: 1450),
+                      child: FadeInDown(
+                        delay: const Duration(milliseconds: 650),
                         child: CircleAvatar(
                           backgroundColor: Colors.black,
                           child: IconButton(
@@ -341,12 +344,12 @@ class TabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _controller = Get.find<TabBarController>();
-    return FadeInDown(
-      delay: const Duration(milliseconds: 800),
+    return FadeInUp(
+      delay: const Duration(milliseconds: 300),
       child: Container(
         margin: const EdgeInsets.only(top: 10, bottom: 5),
         width: w,
-        height: h / 13,
+        height: h / 15,
         child: Row(
           children: [
             SizedBox(
@@ -416,25 +419,22 @@ class TopTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: w,
-      height: h / 10,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FadeInDown(
-            delay: const Duration(milliseconds: 400),
-            child: Text(
+    return FadeInUp(
+      delay: const Duration(milliseconds: 200),
+      child: SizedBox(
+        width: w,
+        height: h / 10,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
               "Delicious Salads",
               style: GoogleFonts.oxygen(
                 fontSize: 35,
                 fontWeight: FontWeight.w800,
               ),
             ),
-          ),
-          FadeInDown(
-            delay: const Duration(milliseconds: 600),
-            child: Text(
+            Text(
               " We made fresh and Healthy food",
               style: GoogleFonts.oxygen(
                 fontSize: 18,
@@ -442,8 +442,8 @@ class TopTextWidget extends StatelessWidget {
                 fontWeight: FontWeight.w300,
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -456,11 +456,11 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   }) : super(key: key);
 
   @override
-  Size get preferredSize => const Size.fromHeight(60);
+  Size get preferredSize => const Size.fromHeight(80);
   @override
   Widget build(BuildContext context) {
-    return FadeInDown(
-      delay: const Duration(milliseconds: 100),
+    return Padding(
+      padding: const EdgeInsets.only(top: 20),
       child: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
@@ -482,7 +482,8 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
                 Get.find<NavigatorController>().changeNavBarIndex(2);
               },
               child: const CircleAvatar(
-                backgroundImage: AssetImage("assets/images/me.jpg"),
+                radius: 25,
+                backgroundImage: AssetImage("assets/images/main.png"),
               ),
             ),
           )

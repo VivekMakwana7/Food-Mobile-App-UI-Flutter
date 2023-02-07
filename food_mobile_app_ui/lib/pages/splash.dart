@@ -6,7 +6,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 //
 import '../pages/landscape_mode.dart';
 import '../controllers/splash_controller.dart';
-import '../utils/constanst.dart';
+import '../utils/constants.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -42,8 +42,8 @@ class SplashPage extends StatelessWidget {
               Positioned(
                 top: 90,
                 left: 60,
-                child: FadeInDown(
-                  delay: const Duration(milliseconds: 800),
+                child: FadeInUp(
+                  delay: const Duration(milliseconds: 500),
                   child: SizedBox(
                     width: w / 1.5,
                     height: h / 10,
@@ -62,8 +62,8 @@ class SplashPage extends StatelessWidget {
               Positioned(
                 top: 130,
                 left: 60,
-                child: FadeInDown(
-                  delay: const Duration(milliseconds: 1200),
+                child: FadeInUp(
+                  delay: const Duration(milliseconds: 700),
                   child: SizedBox(
                     width: w / 1.5,
                     height: h / 10,
@@ -82,10 +82,10 @@ class SplashPage extends StatelessWidget {
               Positioned(
                 top: 220,
                 left: 75,
-                child: FadeInDown(
-                  delay: const Duration(milliseconds: 1600),
+                child: FadeInUp(
+                  delay: const Duration(milliseconds: 900),
                   child: Spin(
-                    delay: const Duration(milliseconds: 2000),
+                    delay: const Duration(milliseconds: 1000),
                     child: SizedBox(
                       width: w / 1.6,
                       height: h / 3.3,
@@ -97,8 +97,8 @@ class SplashPage extends StatelessWidget {
               Positioned(
                 bottom: 70,
                 left: 80,
-                child: FadeInDown(
-                  delay: const Duration(milliseconds: 2300),
+                child: FadeInUp(
+                  delay: const Duration(milliseconds: 1300),
                   child: SizedBox(
                     width: w / 1.6,
                     height: h / 19,
@@ -118,7 +118,7 @@ class SplashPage extends StatelessWidget {
                 bottom: 5,
                 left: 155,
                 child: FadeInUp(
-                  delay: const Duration(milliseconds: 2600),
+                  delay: const Duration(milliseconds: 1500),
                   child: SizedBox(
                     width: w / 5,
                     height: h / 15,

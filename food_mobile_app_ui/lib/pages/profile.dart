@@ -10,7 +10,7 @@ import 'package:line_icons/line_icons.dart';
 import '../pages/setting.dart';
 import '../controllers/navigator_controllers.dart';
 import '../controllers/wallet_controller.dart';
-import '../utils/constanst.dart';
+import '../utils/constants.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -48,7 +48,7 @@ class BottomSection extends StatelessWidget {
 
   List<String> performances = [
     "Orders History",
-    "Payment methode",
+    "Payment methods",
     "Tracking",
     "Statistics",
     "Settings",
@@ -69,7 +69,7 @@ class BottomSection extends StatelessWidget {
     return Positioned(
       bottom: 0,
       child: FadeInUp(
-        delay: const Duration(milliseconds: 900),
+        delay: const Duration(milliseconds: 600),
         child: Container(
           width: w,
           height: h / 2.2,
@@ -94,7 +94,7 @@ class BottomSection extends StatelessWidget {
                         : Container();
                   },
                   child: FadeInUp(
-                    delay: Duration(milliseconds: 1010 * index ~/ 1.5),
+                    delay: Duration(milliseconds: 600* index ~/ 1.5),
                     child: Container(
                       margin: const EdgeInsets.all(15.0),
                       decoration: BoxDecoration(
@@ -106,7 +106,7 @@ class BottomSection extends StatelessWidget {
                           children: [
                             FadeInUp(
                               delay:
-                                  Duration(milliseconds: 1200 * index ~/ 1.5),
+                                  Duration(milliseconds: 650 * index ~/ 1.5),
                               child: SizedBox(
                                   width: 100,
                                   height: 100,
@@ -117,7 +117,7 @@ class BottomSection extends StatelessWidget {
                             ),
                             FadeInUp(
                               delay: Duration(
-                                milliseconds: 1400 * index ~/ 1.5,
+                                milliseconds: 700 * index ~/ 1.5,
                               ),
                               child: Text(performances[index],
                                   style: GoogleFonts.lato(
@@ -145,7 +145,7 @@ class PurpleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
-      delay: const Duration(milliseconds: 1600),
+      delay: const Duration(milliseconds: 300),
       child: Container(
         width: w,
         height: h / 5,
@@ -207,7 +207,7 @@ class ComponentsOfPurpleSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
-      delay: const Duration(milliseconds: 2000),
+      delay: const Duration(milliseconds: 400),
       child: Container(
         margin: const EdgeInsets.only(bottom: 20),
         width: w / 3.7,
@@ -220,13 +220,13 @@ class ComponentsOfPurpleSection extends StatelessWidget {
           children: [
             FadeInUp(
               child: title,
-              delay: const Duration(milliseconds: 2400),
+              delay: const Duration(milliseconds: 450),
             ),
             const SizedBox(
               height: 5,
             ),
             FadeInUp(
-              delay: const Duration(milliseconds: 2800),
+              delay: const Duration(milliseconds:500),
               child: Text(subtitle,
                   style: const TextStyle(color: unSelectedColor, fontSize: 16)),
             ),
@@ -245,8 +245,8 @@ class TopUserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInDown(
-      delay: const Duration(milliseconds: 600),
+    return FadeInUp(
+      delay: const Duration(milliseconds: 200),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: SizedBox(
@@ -257,7 +257,7 @@ class TopUserInfo extends StatelessWidget {
             children: [
               const CircleAvatar(
                   radius: 40,
-                  backgroundImage: AssetImage("assets/images/me.jpg")),
+                  backgroundImage: AssetImage("assets/images/main.png")),
               const SizedBox(
                 width: 10,
               ),
@@ -300,37 +300,34 @@ class UserProfileAppBar extends StatelessWidget with PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(60);
   @override
   Widget build(BuildContext context) {
-    return FadeInDown(
-      delay: const Duration(milliseconds: 100),
-      child: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.menu_rounded,
-            color: Colors.black,
-            size: 35,
-          ),
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
+    return AppBar(
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      leading: IconButton(
+        icon: const Icon(
+          Icons.menu_rounded,
+          color: Colors.black,
+          size: 35,
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10.0),
-            child: IconButton(
-              onPressed: () {
-                Get.find<NavigatorController>().changeNavBarIndex(1);
-              },
-              icon: const Icon(
-                LineIcons.shoppingCart,
-                color: Colors.black,
-                size: 35,
-              ),
+        onPressed: () {
+          Scaffold.of(context).openDrawer();
+        },
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 10.0),
+          child: IconButton(
+            onPressed: () {
+              Get.find<NavigatorController>().changeNavBarIndex(1);
+            },
+            icon: const Icon(
+              LineIcons.shoppingCart,
+              color: Colors.black,
+              size: 35,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

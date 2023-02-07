@@ -6,16 +6,13 @@ import 'package:get/get.dart';
 import '../pages/splash.dart';
 import '../bindings/all_bindings.dart';
 
-
-
-void main() async{
-   await GetStorage.init();
+void main() async {
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-  
 
   @override
   Widget build(BuildContext context) {

@@ -6,7 +6,7 @@ import 'package:line_icons/line_icons.dart';
 //
 import '../controllers/switch_controller.dart';
 import '../controllers/wallet_controller.dart';
-import '../utils/constanst.dart';
+import '../utils/constants.dart';
 import '../controllers/food_controller.dart';
 
 class DetailsPage extends StatelessWidget {
@@ -334,30 +334,27 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(55);
   @override
   Widget build(BuildContext context) {
-    return FadeInDown(
-      delay: const Duration(milliseconds: 100),
-      child: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
+    return AppBar(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      automaticallyImplyLeading: false,
+      leading: IconButton(
+          onPressed: () {
+            Get.back();
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: Colors.black,
+          )),
+      actions: [
+        IconButton(
+            onPressed: () {},
             icon: const Icon(
-              Icons.arrow_back_ios_new_rounded,
+              Icons.more_vert,
               color: Colors.black,
-            )),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.more_vert,
-                color: Colors.black,
-                size: 30,
-              ))
-        ],
-      ),
+              size: 30,
+            ))
+      ],
     );
   }
 }

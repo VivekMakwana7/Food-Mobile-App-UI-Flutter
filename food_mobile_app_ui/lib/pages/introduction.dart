@@ -25,7 +25,7 @@ class IntroductionPage extends StatelessWidget {
               Color(0xffF900BF),
               Color(0xffFF85B3),
             ],
-            itemCount: concentrics.length,
+            itemCount: concentric.length,
             onFinish: () {
               Get.offAll(()=> const MainNavigator(),
                   transition: Transition.cupertino);
@@ -52,19 +52,19 @@ class IntroductionPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  FadeInDown(
+                  FadeInUp(
                     delay: const Duration(milliseconds: 500),
                     child: SizedBox(
                       height: 290,
                       width: 300,
-                      child: Lottie.network(concentrics[index].lottie,
+                      child: Lottie.network(concentric[index].lottie,
                           animate: true),
                     ),
                   ),
-                  FadeInDown(
-                    delay: const Duration(milliseconds: 1000),
+                  FadeInUp(
+                    delay: const Duration(milliseconds: 700),
                     child: Text(
-                      concentrics[index].text,
+                      concentric[index].text,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.rubik(
                         color: Colors.white,
@@ -75,10 +75,10 @@ class IntroductionPage extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15.0),
-                    child: FadeInDown(
-                      delay: const Duration(milliseconds: 1500),
+                    child: FadeInUp(
+                      delay: const Duration(milliseconds: 900),
                       child: Text(
-                        "${index + 1} / ${concentrics.length}",
+                        "${index + 1} / ${concentric.length}",
                         style: GoogleFonts.rubik(
                             color: Colors.white,
                             fontWeight: FontWeight.w400,

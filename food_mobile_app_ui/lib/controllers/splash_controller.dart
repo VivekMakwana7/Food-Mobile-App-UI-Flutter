@@ -17,7 +17,7 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     Future.delayed(
-      const Duration(seconds: 10),
+      const Duration(seconds: 8),
       () {
         Get.offAll(() => showIntro == true?  const IntroductionPage() : const MainNavigator(),
             transition: Transition.cupertino);

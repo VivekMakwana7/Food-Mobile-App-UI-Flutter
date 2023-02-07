@@ -8,7 +8,7 @@ class ConcentricModel {
   });
 }
 
-List<ConcentricModel> concentrics = [
+List<ConcentricModel> concentric = [
     ConcentricModel(
       lottie: "https://assets7.lottiefiles.com/packages/lf20_eop7ymay.json",
       text: "Food fast\ndelivery",
