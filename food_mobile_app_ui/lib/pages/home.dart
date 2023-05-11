@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
+
+import '../controllers/food_controller.dart';
 //
 import '../controllers/navigator_controllers.dart';
-import '../controllers/food_controller.dart';
-import '../controllers/wallet_controller.dart';
 import '../controllers/switch_controller.dart';
-import '../pages/details.dart';
 import '../controllers/tabBar_controller.dart';
+import '../controllers/wallet_controller.dart';
+import '../pages/details.dart';
 import '../utils/constants.dart';
 
 class HomePage extends StatelessWidget {
@@ -30,7 +31,8 @@ class HomePage extends StatelessWidget {
         appBar: const MyAppBar(),
         body: Padding(
           padding: const EdgeInsets.all(7.0),
-          child: Column(
+          child: ListView(
+            shrinkWrap: true,
             children: [
               const TopTextWidget(),
               TabBar(),
@@ -110,7 +112,6 @@ class BottomSaladGridView extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      
                       top: 130,
                       child: FadeInUp(
                         delay: const Duration(milliseconds: 900),
@@ -131,13 +132,12 @@ class BottomSaladGridView extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                    
                       top: 155,
                       child: FadeInUp(
                         delay: const Duration(milliseconds: 1000),
                         child: Text(
                           _foodController.salads[index].subtitle,
-                            textAlign: TextAlign.center,
+                          textAlign: TextAlign.center,
                           style: GoogleFonts.oxygen(
                               color: const Color.fromARGB(255, 135, 134, 134),
                               fontWeight: FontWeight.w300,
@@ -483,7 +483,7 @@ class MyAppBar extends StatelessWidget with PreferredSizeWidget {
               },
               child: const CircleAvatar(
                 radius: 25,
-                backgroundImage: AssetImage("assets/images/main.png"),
+                backgroundImage: AssetImage("assets/images/1.png"),
               ),
             ),
           )

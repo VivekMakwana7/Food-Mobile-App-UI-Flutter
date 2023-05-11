@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:lottie/lottie.dart';
+
 //
 import '../controllers/navigator_controllers.dart';
 import '../controllers/wallet_controller.dart';
@@ -112,7 +113,7 @@ class MainItem extends StatelessWidget {
                       )),
                   SizedBox(
                     width: w,
-                    height: h / 1.65,
+                    height: h / 1.85,
                     child: ListView.builder(
                       itemCount: _walletController.walletFood.length,
                       physics: const BouncingScrollPhysics(),
